@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gambar dan Tombol 3D</title>
+    <title>NIXY SITE XYZ</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/nixy-pro/nixysite/main/cuk.png" type="image/x-icon"> <!-- Tambahkan favicon -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -185,6 +186,33 @@
                 }
             });
         });
+
+        // Cookie handling for visit history
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + (value || "") + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Set a cookie to track if the user has visited before
+        if (!getCookie('visited')) {
+            setCookie('visited', 'true', 7); // Cookie will last 7 days
+            console.log('First visit!');
+        } else {
+            console.log('Returning visitor!');
+        }
     </script>
 
 </body>
