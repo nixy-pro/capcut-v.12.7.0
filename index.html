@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapCut v12.7.0 - NIXY Site</title>
+    <title>CapCut Premium Free</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #282c34;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         @keyframes typing {
@@ -23,43 +27,59 @@
 
         @keyframes blink {
             from { border-right-color: transparent; }
-            to { border-right-color: black; }
+            to { border-right-color: white; }
+        }
+
+        .title-container {
+            width: 100%;
+            max-width: 90%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-right: 3px solid;
+            white-space: nowrap;
+            box-sizing: border-box;
         }
 
         h1 {
-            color: #000;
-            text-align: center;
-            margin-bottom: 20px;
+            font-size: 2.2em;
+            margin: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid;
-            font-size: 24px;
-            width: 0;
-            animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+                max-width: 100%;
+            }
         }
 
         img {
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             margin-bottom: 20px;
         }
 
         .button-container {
             display: flex;
-            gap: 15px;
+            gap: 20px;
+            justify-content: center;
         }
 
         .button-3d {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 25px;
+            font-size: 18px;
             font-weight: bold;
             color: #fff;
             background-color: #000;
             border: none;
-            border-radius: 8px;
-            box-shadow: 0 5px #666;
+            border-radius: 10px;
+            box-shadow: 0 5px #444;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -69,14 +89,16 @@
         }
 
         .button-3d:active {
-            box-shadow: 0 2px #444;
-            transform: translateY(4px);
+            box-shadow: 0 3px #222;
+            transform: translateY(3px);
         }
     </style>
 </head>
 <body>
 
-    <h1>CapCut v12.7.0 PREMIUM FREE</h1>
+    <div class="title-container">
+        <h1>CapCut v12.7.0 PREMIUM FREE</h1>
+    </div>
 
     <img src="1.webp" alt="Gambar Default">
 
