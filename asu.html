@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar dan Tombol 3D</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom right, #121212, #1e1e1e);
+            color: #e0e0e0;
+            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            padding: 15px 30px;
+            border-radius: 30px;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .navbar.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .content {
+            margin-top: 100px; /* Tambahkan ruang untuk navbar */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 10px; /* Tambahkan padding horizontal */
+            box-sizing: border-box;
+        }
+
+        .title {
+            background: #000;
+            color: #fff;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px; /* Ukuran yang sama dengan gambar */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .title.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: transform 0.6s ease-in-out;
+            z-index: 0;
+        }
+
+        .title:hover::before {
+            transform: scaleX(1);
+        }
+
+        .title span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.8em;
+                padding: 15px 30px;
+                max-width: 300px; /* Sesuaikan untuk layar kecil */
+            }
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        img.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+            max-width: 400px; /* Ukuran yang sama dengan gambar */
+        }
+
+        .button-3d {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .button-3d:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .button-3d:active {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">NIXY Site</div>
+
+    <div class="content">
+        <div class="title">
+            <span>Gambar Menarik dengan Tombol 3D</span>
+        </div>
+
+        <img src="https://via.placeholder.com/400" alt="Gambar Default">
+
+        <div class="button-container">
+            <a href="https://link1.com"><button class="button-3d">Button 1</button></a>
+            <a href="https://link2.com"><button class="button-3d">Button 2</button></a>
+            <a href="https://link3.com"><button class="button-3d">Button 3</button></a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.navbar, .title, img');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                // Jika elemen berada di luar viewport
+                if (rect.top + rect.height < 0) {
+                    element.classList.add('hidden');
+                } else {
+                    element.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
