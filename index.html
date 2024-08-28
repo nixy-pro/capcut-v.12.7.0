@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapCut v12.7.0 MOD APK (Pro, Premium Unlocked)</title>
+    <title>NIXY SITE XYZ</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            background-color: #282c34;
-            color: #ffffff;
+            background: linear-gradient(to bottom right, #121212, #1e1e1e);
+            color: #e0e0e0;
             text-align: center;
-            padding: 20px;
+            padding: 0;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         .navbar {
@@ -24,16 +25,22 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: #000;
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            color: #fff;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .navbar.hidden {
+            opacity: 0;
+            transform: scale(0.8);
         }
 
         .content {
-            margin-top: 80px; /* Tambahan margin untuk memberikan ruang di bawah navbar */
+            margin-top: 100px; /* Tambahkan ruang untuk navbar */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,88 +48,141 @@
             max-width: 90%;
         }
 
-        h1 {
+        .title {
+            background: #000;
+            color: #fff;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             font-size: 2.2em;
-            margin-bottom: 20px;
-            animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
-            overflow-wrap: break-word;
-            margin-top: 0;
+            font-weight: bold;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px; /* Same width as image */
+            transition: transform 0.5s ease, opacity 0.5s ease;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        .title.hidden {
+            opacity: 0;
+            transform: scale(0.8);
         }
 
-        @keyframes blink {
-            from { border-right-color: transparent; }
-            to { border-right-color: white; }
+        .title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: transform 0.6s ease-in-out;
+            z-index: 0;
+        }
+
+        .title:hover::before {
+            transform: scaleX(1);
+        }
+
+        .title span {
+            position: relative;
+            z-index: 1;
         }
 
         @media (max-width: 600px) {
-            h1 {
+            .title {
                 font-size: 1.8em;
-                white-space: normal;
-                animation: none;
+                padding: 15px 30px;
+                max-width: 300px; /* Adjust for smaller screens */
             }
         }
 
         img {
             width: 100%;
-            max-width: 300px;
+            max-width: 400px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        img.hidden {
+            opacity: 0;
+            transform: scale(0.8);
         }
 
         .button-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             align-items: center;
+            width: 100%;
         }
 
         .button-3d {
-            padding: 12px 25px;
+            padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
             color: #fff;
-            background-color: #000;
+            background-color: #333;
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px #444;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 200px;
+            max-width: 220px;
         }
 
         .button-3d:hover {
-            background-color: #333;
+            background-color: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .button-3d:active {
-            box-shadow: 0 3px #222;
-            transform: translateY(3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="navbar">NIXY Site</div>
+    <div class="navbar">NIXY SITE XYZ</div>
 
     <div class="content">
-        <h1>CapCut v12.7.0 MOD APK (Pro, Premium Unlocked)</h1>
+        <div class="title">
+            <span>CapCut v12.7.0 MOD APK (Pro, Premium Unlocked)</span>
+        </div>
 
-        <img src="1.webp" alt="Gambar Default">
+        <img src="#" alt="Gambar Default">
 
         <div class="button-container">
             <a href="https://sfl.gl/ljbSyuaR"><button class="button-3d">Unduh</button></a>
             <a href="https://info.nixysite.xyz/youtube_XGnVDwlkWJY_1920x1080_h264.mp4"><button class="button-3d">Cara Unduh</button></a>
-            <a href="https://donasi.nixysite.xyz"><button class="button-3d">Donasi</button></a>
+            <a href="http://donasi.nixysite.xyz"><button class="button-3d">Donasi</button></a><br>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.navbar, .title, img');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                // Jika elemen berada di luar viewport
+                if (rect.top + rect.height < 0) {
+                    element.classList.add('hidden');
+                } else {
+                    element.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
