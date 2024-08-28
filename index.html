@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIXY SITE XYZ</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/nixy-pro/nixysite/main/cuk.png" type="image/x-icon"> <!-- Tambahkan favicon -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -32,6 +33,8 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: transform 0.5s ease, opacity 0.5s ease;
+            width: auto;
+            max-width: 90%;
         }
 
         .navbar.hidden {
@@ -45,7 +48,8 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 90%;
+            padding: 0 10px; /* Tambahkan padding horizontal */
+            box-sizing: border-box;
         }
 
         .title {
@@ -54,13 +58,13 @@
             padding: 20px 40px;
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: bold;
             margin-bottom: 30px;
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 400px; /* Same width as image */
+            max-width: 90%; /* Adjust width for responsiveness */
             transition: transform 0.5s ease, opacity 0.5s ease;
         }
 
@@ -94,15 +98,14 @@
 
         @media (max-width: 600px) {
             .title {
-                font-size: 1.8em;
-                padding: 15px 30px;
-                max-width: 300px; /* Adjust for smaller screens */
+                font-size: 1.6em;
+                padding: 15px 20px;
             }
         }
 
         img {
             width: 100%;
-            max-width: 400px;
+            max-width: 90%; /* Adjust to make sure it fits well on small screens */
             height: auto;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
@@ -121,11 +124,12 @@
             gap: 15px;
             align-items: center;
             width: 100%;
+            max-width: 90%; /* Adjust width for responsiveness */
         }
 
         .button-3d {
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #fff;
             background-color: #333;
@@ -135,7 +139,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 220px;
+            max-width: 300px; /* Adjust width for responsiveness */
         }
 
         .button-3d:hover {
@@ -152,22 +156,22 @@
 </head>
 <body>
 
-    <div class="navbar">NIXY SITE XYZ</div>
+    <div class="navbar">NIXY SITE</div>
 
     <div class="content">
         <div class="title">
             <span>CapCut v12.7.0 MOD APK (Pro, Premium Unlocked)</span>
         </div>
 
-        <img src="1.webp" alt="Gambar Default">
+        <img src="1.webp" alt="NIXY SITE">
 
         <div class="button-container">
-            <a href="https://sfl.gl/ljbSyuaR"><button class="button-3d">Unduh</button></a>
-            <a href="https://info.nixysite.xyz/youtube_XGnVDwlkWJY_1920x1080_h264.mp4"><button class="button-3d">Cara Unduh</button></a>
-            <a href="http://donasi.nixysite.xyz"><button class="button-3d">Donasi</button></a><br>
+            <a href="https://sfl.gl/ljbSyuaR"><button class="button-3d">Button 1</button></a>
+            <a href="https://info.nixysite.xyz/youtube_XGnVDwlkWJY_1920x1080_h264.mp4"><button class="button-3d">Button 2</button></a>
+            <a href="http://donasi.nixysite.xyz"><button class="button-3d">Button 3</button></a>
         </div>
     </div>
-
+    <br>
     <script>
         document.addEventListener('scroll', function() {
             const elements = document.querySelectorAll('.navbar, .title, img');
@@ -182,6 +186,33 @@
                 }
             });
         });
+
+        // Cookie handling for visit history
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + (value || "") + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Set a cookie to track if the user has visited before
+        if (!getCookie('visited')) {
+            setCookie('visited', 'true', 7); // Cookie will last 7 days
+            console.log('First visit!');
+        } else {
+            console.log('Returning visitor!');
+        }
     </script>
 
 </body>
